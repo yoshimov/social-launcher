@@ -1,4 +1,4 @@
-/* md5.js - MD5 Message-Digest
+ï»¿/* md5.js - MD5 Message-Digest
  * Copyright (C) 1999,2002 Masanao Izumo <iz@onicos.co.jp>
  * Version: 2.0.0
  * LastModified: May 13 2002
@@ -299,7 +299,7 @@ function slauncher_searchtag(json) {
 }
 
 function slauncher_showlink(json) {
-    // ˜g‚ğ—pˆÓ
+    // æ ã‚’ç”¨æ„
     for (var item,i = 0; item = json[i]; i ++) {
 	if (slauncher_map[item.u]) {
 	    continue;
@@ -315,11 +315,11 @@ function slauncher_showlink(json) {
 	atag.appendChild(document.createTextNode(item.d));
 	slauncher_content.appendChild(atag);
 	alauncher_content.appendChild(document.createElement("br"));
-	slauncher_map[item.u] = {}; // ‹óƒIƒuƒWƒFƒNƒg‚ğƒZƒbƒg
+	slauncher_map[item.u] = {}; // ç©ºã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ã‚»ãƒƒãƒˆ
     }
 }
 
-// ‹N“®ƒXƒNƒŠƒvƒg
+// èµ·å‹•ã‚¹ã‚¯ãƒªãƒ—ãƒˆ
 (function() {
     var cid = "socialauncher-content"
     slauncher_content = document.getElementById(cid);
@@ -337,17 +337,17 @@ function slauncher_showlink(json) {
 	slauncher_content.id = cid;
 	slauncher_content.innerHTML = "<b>Social Launcher</b><br />Loading..";
 	document.body.appendChild(slauncher_content);
-	// MD5’l‚ğ—pˆÓ (TODO:Canonicalize‚ª•K—v)
+	// MD5å€¤ã‚’ç”¨æ„ (TODO:CanonicalizeãŒå¿…è¦)
 	var target = utf16to8(document.location.href);
 	var hash = MD5_hexhash(target);
-	// ƒ^ƒO‚ğŒŸõ
+	// ã‚¿ã‚°ã‚’æ¤œç´¢
 	var url = "http://feeds.delicious.com/v2/json/url/" + hash + "?count=50&callback=slauncher_searchtag";
 	var s = document.createElement("script");
 	s.type = "text/javascript";
 	s.src = url;
 	document.body.appendChild(s);
     } else {
-	// ‚·‚Å‚É•\¦‚³‚ê‚Ä‚¢‚éê‡‚Í‰B‚·
+	// ã™ã§ã«è¡¨ç¤ºã•ã‚Œã¦ã„ã‚‹å ´åˆã¯éš ã™
 	if (slauncher_content.style.display == "none") {
 	    slauncher_content.style.display = "block";
 	} else {
